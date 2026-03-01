@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --font-inter: var(--font-inter);
+  --font-outfit: var(--font-outfit);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Accessibility Modes */
+.high-contrast {
+  --background: #000000 !important;
+  --foreground: #ffffff !important;
+  --accent: #ffff00 !important;
+  --muted: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast * {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+.high-contrast .bg-white,
+.high-contrast .bg-slate-50,
+.high-contrast .bg-indigo-50,
+.high-contrast .bg-emerald-50,
+.high-contrast .bg-red-50,
+.high-contrast .bg-orange-50 {
+  background-color: #000000 !important;
+}
+
+.high-contrast aside,
+.high-contrast header,
+.high-contrast nav,
+.high-contrast main,
+.high-contrast div {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast .text-slate-900,
+.high-contrast .text-slate-800,
+.high-contrast .text-slate-700,
+.high-contrast .text-slate-600,
+.high-contrast .text-slate-500,
+.high-contrast .text-slate-400,
+.high-contrast .text-slate-300,
+.high-contrast .text-indigo-600,
+.high-contrast .text-indigo-500 {
+  color: #ffffff !important;
+}
+
+.high-contrast .text-indigo-200,
+.high-contrast .text-indigo-300,
+.high-contrast .text-blue-200 {
+  color: #ffff00 !important;
+}
+
+.high-contrast aside,
+.high-contrast header,
+.high-contrast nav {
+  border: 2px solid #ffffff !important;
+}
+
+.high-contrast button,
+.high-contrast a,
+.high-contrast .btn {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 4px solid #ffff00 !important;
+  font-weight: 900 !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast button:hover,
+.high-contrast a:hover {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+/* Fix specific faint text in dashboard */
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast p,
+.high-contrast span {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.high-contrast .bg-gradient-to-br {
+  background-image: none !important;
+  background-color: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Font Scales */
+.text-sm {
+  font-size: 0.875rem !important;
+}
+
+.text-base {
+  font-size: 1rem !important;
+}
+
+.text-lg {
+  font-size: 1.25rem !important;
+}
+
+.text-xl {
+  font-size: 1.5rem !important;
+}
+
+.dyslexia-mode {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', cursive !important;
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.1em !important;
+}
+
+/* Focus Mode - Improved Selectors */
+.focus-mode aside,
+.focus-mode header {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease, visibility 0.3s;
+  visibility: hidden !important;
+}
+
+.focus-mode main {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 900px !important;
+  padding-top: 2rem !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.focus-mode .fixed.bottom-6 {
+  opacity: 0.1 !important;
+}
+
+.focus-mode .fixed.bottom-6:hover {
+  opacity: 1 !important;
+}
